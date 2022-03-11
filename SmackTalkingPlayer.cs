@@ -11,7 +11,7 @@ namespace ShootingDice
 
         public override int Roll()
         {
-            Console.WriteLine($"{Name} says: 'How appropriate. You fight like a cow!'");
+            Console.WriteLine($"{Name} says, 'How appropriate. You fight like a cow!'");
             return base.Roll();
         }
     }

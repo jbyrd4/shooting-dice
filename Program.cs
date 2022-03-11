@@ -8,45 +8,40 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
-            Player player1 = new Player();
-            player1.Name = "Bob";
-
-            Player player2 = new Player();
-            player2.Name = "Sue";
+            Player lowFiber = new Player();
+            lowFiber.Name = "Men of Low Moral Fiber";
 
             Console.WriteLine("1. Smack Talking Player");
             Console.WriteLine("-----------------------");
-            SmackTalkingPlayer smackPlayer = new SmackTalkingPlayer();
-            smackPlayer.Name = "Richard";
-            player1.Play(smackPlayer);
+            SmackTalkingPlayer elaine = new SmackTalkingPlayer();
+            elaine.Name = "Elaine Marley";
+            lowFiber.Play(elaine);
             Console.WriteLine("");
-
 
             Console.WriteLine("2. One Higher Player");
             Console.WriteLine("-----------------------");
-            OneHigherPlayer highPlayer = new OneHigherPlayer();
-            highPlayer.Name = "Chuck";
-            highPlayer.Play(player1);
+            OneHigherPlayer leChuck = new OneHigherPlayer();
+            leChuck.Name = "LeChuck";
+            leChuck.Play(elaine);
             Console.WriteLine("");
 
-            Console.WriteLine("-------------------");
+            Console.WriteLine("3. Human Player");
+            Console.WriteLine("-----------------------");
+            HumanPlayer stan = new HumanPlayer();
+            stan.Name = "Stan";
+            elaine.Play(stan);
 
-            Player player3 = new Player();
-            player3.Name = "Wilma";
+            Console.WriteLine("4. Creative Smack Talking Player");
+            Console.WriteLine("-----------------------");
+            CreativeSmackTalkingPlayer guybrush = new CreativeSmackTalkingPlayer();
+            guybrush.Name = "Guybrush Threepwood";
+            guybrush.Play(elaine);
 
-            player3.Play(player2);
-
-            Console.WriteLine("-------------------");
-
-            Player large = new LargeDicePlayer();
-            large.Name = "Bigun Rollsalot";
-
-            player1.Play(large);
 
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                elaine, guybrush, leChuck, stan
             };
 
             PlayMany(players);
