@@ -30,18 +30,41 @@ namespace ShootingDice
             HumanPlayer stan = new HumanPlayer();
             stan.Name = "Stan";
             elaine.Play(stan);
+            Console.WriteLine("");
 
             Console.WriteLine("4. Creative Smack Talking Player");
             Console.WriteLine("-----------------------");
             CreativeSmackTalkingPlayer guybrush = new CreativeSmackTalkingPlayer();
             guybrush.Name = "Guybrush Threepwood";
             guybrush.Play(elaine);
+            Console.WriteLine("");
 
+            Console.WriteLine("5. Sore Loser Player");
+            Console.WriteLine("-----------------------");
+            SoreLoserPlayer voodooLady = new SoreLoserPlayer();
+            voodooLady.Name = "Voodoo Lady";
+            voodooLady.Play(guybrush);
+            Console.WriteLine("");
 
+            Console.WriteLine("6. Upper Half Player");
+            Console.WriteLine("-----------------------");
+            UpperHalfPlayer scumBarChef = new UpperHalfPlayer();
+            scumBarChef.Name = "Scum Bar Chef";
+            guybrush.Play(scumBarChef);
+            Console.WriteLine("");
+
+            Console.WriteLine("7. Sore Loser Upper Half Player");
+            Console.WriteLine("-----------------------");
+            SoreLoserUpperHalfPlayer threeHeadMonk = new SoreLoserUpperHalfPlayer();
+            threeHeadMonk.Name = "Three Headed Monkey";
+            threeHeadMonk.Play(elaine);
+            Console.WriteLine("");
+
+            Console.WriteLine("Many Players");
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                elaine, guybrush, leChuck, stan
+                elaine, guybrush, leChuck, stan, scumBarChef, threeHeadMonk
             };
 
             PlayMany(players);
